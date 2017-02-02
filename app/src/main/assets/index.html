@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta name="misapplication-tap-highlight" content="no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Java与JavaScript的互相调用</title>  
+		<script>
+			function javaToJs1() {
+				document.getElementById('a').innerHTML += "Hello World!<br />";
+			}
+			function javaToJs2(v) {
+				document.getElementById('a').innerHTML += v + "<br />";
+			}
+		</script>
+	</head>
+	<body>
+		<p>一、</p>
+		<div align="center">
+			<a href="#" onclick="window.zyx1011.jsToJava1()">JavaScript调用Java方式1_1</a></br><br />
+			<a href="#" onclick="window.zyx1011.jsToJava1('Hello Java!')">JavaScript调用Java方式1_2</a></br><br />
+			<p>----------分隔线----------</p>
+			<a href="http://JsToJava2?method=js1">JavaScript调用Java方式2_1</a></br><br />
+			<a href="http://JsToJava2?method=js2&param=Hello Java!">JavaScript调用Java方式2_2</a></br><br />
+		</div>
+		<p>二、</p>
+		<div align="center">
+			<button onclick="window.zyx1011.jsToJava1()">JavaScript调用Java方式1_1</button></br><br />
+			<button onclick="window.zyx1011.jsToJava1('Hello Java!')">JavaScript调用Java方式1_2</button></br><br />
+			<p>----------分隔线----------</p>
+			<button onclick="window.location.href='http://JsToJava2?method=js1'">JavaScript调用Java方式2_1</button></br><br />
+			<button onclick="window.location.href='http://JsToJava2?method=js2&param=Hello Java!'">JavaScript调用Java方式2_2</button></br><br />
+		</div>
+		<p id="a"></p>
+	</body>
+</html>
